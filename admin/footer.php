@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<?php session_start(); ?>
-
-<head>
-
-
-  <?php
-  if (!isset($_SESSION['login_id']))
-    header('location:login.php');
-  include('header.php');
-  ?>
-
-</head>
 <style>
   .modal-dialog.large {
     width: 80% !important;
@@ -57,86 +42,6 @@
     max-width: calc(100%);
   }
 </style>
-<?php include 'topbar.php' ?>
-
-<body>
-
-
-
-
-  <div class="container-fluid page-body-wrapper">
-
-
-    <!-- START NAV -->
-    <?php include 'navbar.php' ?>
-
-    <!-- partial -->
-    <div class="main-panel">
-      <div class="content-wrapper">
-        <div class="row">
-          <div class="col-lg-12 ">
-            <div class="row">
-              <div class="col-lg-12">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <main id="view-panel">
-          <?php $page = isset($_GET['page']) ? $_GET['page'] : 'home'; ?>
-          <?php include $page . '.php' ?>
-        </main>
-        <div class="container-fluid page-body-wrapper">
-
-
-
-
-
-
-          <div class="modal fade" id="confirm_modal" role='dialog'>
-            <div class="modal-dialog modal-md" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Confirmation</h5>
-                </div>
-                <div class="modal-body">
-                  <div id="delete_content"></div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" id='confirm' onclick="">Continue</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal fade" id="uni_modal" role='dialog'>
-            <div class="modal-dialog modal-md" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title"></h5>
-                </div>
-                <div class="modal-body">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Save</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal fade" id="viewer_modal" role='dialog'>
-            <div class="modal-dialog modal-md" role="document">
-              <div class="modal-content">
-                <button type="button" class="btn-close" data-dismiss="modal"><span class="fa fa-times"></span></button>
-                <img src="" alt="">
-              </div>
-            </div>
-          </div>
-
-
-
-</body>
-
 
 <script>
   window.start_load = function() {
@@ -233,6 +138,3 @@
     width: "100%"
   })
 </script>
-
-
-</html>
